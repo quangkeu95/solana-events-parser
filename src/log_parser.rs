@@ -402,7 +402,7 @@ pub fn bind_events(
                     .entry(last_at_stack(&programs_stack, index)?)
                     .or_default()
                     .push(ProgramLog::Consumed { consumed, all });
-                tracing::info!(
+                tracing::debug!(
                     "Program {:?} at level {}, consumed {}, all: {}",
                     bs58::encode(&ctx.program_id).into_string(),
                     ctx.invoke_level,
