@@ -10,7 +10,7 @@ use std::{
     sync::Arc,
 };
 
-use anchor_lang::AnchorDeserialize;
+use anchor_lang::{AnchorDeserialize, Owner};
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
 pub use solana_client::nonblocking::rpc_client::RpcClient;
@@ -29,11 +29,7 @@ pub use solana_transaction_status::{
     UiTransactionEncoding, UiTransactionTokenBalance,
 };
 
-use crate::{
-    event_parser::{Discriminator, Owner},
-    instruction_parser::GetLoadedAccounts,
-    ParseInstruction,
-};
+use crate::{event_parser::Discriminator, instruction_parser::GetLoadedAccounts, ParseInstruction};
 pub use crate::{
     instruction_parser::{BindInstructions, InstructionContext},
     log_parser::{self, ProgramContext, ProgramLog},
